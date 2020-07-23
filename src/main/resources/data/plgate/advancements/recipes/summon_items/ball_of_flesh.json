@@ -1,0 +1,25 @@
+{
+  "parent": "plgate:recipes/root",
+  "rewards": {
+    "recipes": [
+      "plgate:ball_of_flesh"
+    ]
+  },
+  "criteria": {
+    "has_rotten_flesh": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:rotten_flesh"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_rotten_flesh"
+    ]
+  ]
+}

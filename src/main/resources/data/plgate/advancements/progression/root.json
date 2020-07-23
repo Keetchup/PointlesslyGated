@@ -1,0 +1,68 @@
+{
+  "display": {
+    "icon": {
+      "item": "plgate:emerald_sword"
+    },
+    "title": {
+      "translate": "advancements.progression.root.title"
+    },
+    "description": {
+      "translate": "advancements.progression.root.description"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png"
+  },
+  "criteria": {
+    "stone_sword": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:stone_sword"
+          }
+        ]
+      }
+    },
+    "stone_pickaxe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:stone_pickaxe"
+          }
+        ]
+      }
+    },
+    "stone_axe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:stone_axe"
+          }
+        ]
+      }
+    },
+    "stone_shovel": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:stone_shovel"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "stone_sword",
+      "stone_pickaxe",
+      "stone_axe",
+      "stone_shovel"
+    ]
+  ]
+}

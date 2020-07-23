@@ -1,0 +1,63 @@
+{
+  "advancements.progression.root.title": "Pointlessly Gated",
+  "advancements.progression.root.description": "Go through all of the pointlessly divided stages of the game",
+
+  "advancements.progression.stone_tools.title": "Stone Tools",
+  "advancements.progression.stone_tools.description": "Craft stone tools (sword, pickaxe, axe and shovel)",
+
+  "advancements.progression.leather_armor.title": "Leather Armor",
+  "advancements.progression.leather_armor.description": "Create full set of leather armor",
+
+  "advancements.progression.in_desert_pyramid.title": "Empty Tomb",
+  "advancements.progression.in_desert_pyramid.description": "Find a Desert Temple",
+
+  "advancements.progression.kill_dead_pharaoh.title": "May he Rest in Piece",
+  "advancements.progression.kill_dead_pharaoh.description": "Summon the Dead Pharaoh with a Ball of Flesh in a Desert Temple and kill him",
+
+  "advancements.progression.chainmail_armor.title": "Chainmail Armor",
+  "advancements.progression.chainmail_armor.description": "Create full set of chainmail armor",
+
+  "advancements.progression.in_jungle_pyramid.title": "Forgotten Civilization",
+  "advancements.progression.in_jungle_pyramid.description": "Find a Jungle Temple",
+
+  "advancements.progression.kill_spider_queen.title": "Tingly Feeling",
+  "advancements.progression.kill_spider_queen.description": "Summon the Spider Queen with a Spider Soup in a Jungle Temple and kill her",
+
+  "item.plgate.ball_of_flesh": "Ball of Flesh",
+  "item.plgate.ball_of_flesh.summon": "The Pharaoh has been summoned",
+  "item.plgate.spider_soup": "Spider Soup",
+  "item.plgate.spider_soup.summon": "The Spider Queen has been summoned",
+
+  "item.plgate.structure_locator": "Structure Locator",
+  "item.plgate.structure_locator.desert_pyramid": "Searching for the nearest Desert Pyramid",
+  "item.plgate.structure_locator.igloo": "Searching for the nearest Igloo",
+  "item.plgate.structure_locator.jungle_pyramid": "Searching for the nearest Jungle Pyramid",
+  "item.plgate.structure_locator.mansion": "Searching for the nearest Mansion",
+  "item.plgate.structure_locator.monument": "Searching for the nearest Ocean Monument",
+  "item.plgate.structure_locator.pillager_outpost": "Searching for the nearest Pillager Outpost",
+  "item.plgate.structure_locator.swamp_hut": "Searching for the nearest Swamp Hut",
+
+  "item.plgate.emerald_helmet": "Emerald Helmet",
+  "item.plgate.emerald_chestplate": "Emerald Chestplate",
+  "item.plgate.emerald_leggings": "Emerald Leggings",
+  "item.plgate.emerald_boots": "Emerald Boots",
+
+  "item.plgate.dense_golden_helmet": "Dense Golden Helmet",
+  "item.plgate.dense_golden_chestplate": "Dense Golden Chestplate",
+  "item.plgate.dense_golden_leggings": "Dense Golden Leggings",
+  "item.plgate.dense_golden_boots": "Dense Golden Boots",
+
+  "item.plgate.emerald_sword": "Emerald Sword",
+  "item.plgate.emerald_pickaxe": "Emerald Pickaxe",
+  "item.plgate.emerald_axe": "Emerald Axe",
+  "item.plgate.emerald_shovel": "Emerald Shovel",
+  "item.plgate.emerald_hoe": "Emerald Hoe",
+
+  "item.plgate.dense_golden_sword": "Dense Golden Sword",
+  "item.plgate.dense_golden_pickaxe": "Dense Golden Pickaxe",
+  "item.plgate.dense_golden_axe": "Dense Golden Axe",
+  "item.plgate.dense_golden_shovel": "Dense Golden Shovel",
+  "item.plgate.dense_golden_hoe": "Dense Golden Hoe",
+
+  "itemGroup.plgate.moditemgroup": "Pointlessly Gated Mod"
+}

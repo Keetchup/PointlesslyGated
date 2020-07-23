@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iii",
+    "iCi",
+    "i i"
+  ],
+  "key": {
+    "i": {
+      "item": "minecraft:diamond"
+    },
+    "C": {
+      "item": "minecraft:emerald"
+    }
+  },
+  "result": {
+    "item": "minecraft:diamond_leggings",
+    "count": 1
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "parent": "plgate:progression/kill_dead_pharaoh",
+  "display": {
+    "icon": {
+      "item": "minecraft:mossy_cobblestone"
+    },
+    "title": {
+      "translate": "advancements.progression.in_jungle_pyramid.title"
+    },
+    "description": {
+      "translate": "advancements.progression.in_jungle_pyramid.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "in_jungle_pyramid": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "location": {
+          "feature": "jungle_pyramid"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "in_jungle_pyramid"
+    ]
+  ]
+}

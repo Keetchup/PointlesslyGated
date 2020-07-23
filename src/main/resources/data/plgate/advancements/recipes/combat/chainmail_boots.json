@@ -1,0 +1,59 @@
+{
+  "parent": "plgate:recipes/root",
+  "rewards": {
+    "recipes": [
+      "plgate:chainmail_boots"
+    ]
+  },
+  "criteria": {
+    "has_chain": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:chain"
+          }
+        ]
+      }
+    },
+    "has_leather": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:leather"
+          }
+        ]
+      }
+    },
+    "killed_pharaoh": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:husk",
+          "nbt": "{LeftHanded:1b, CustomName:'{\"text\":\"Dead Pharaoh\"}'}"
+        }
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:iron_boots"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_chain",
+      "has_the_recipe"
+    ],
+    [
+      "has_leather",
+      "has_the_recipe"
+    ],
+    [
+      "killed_pharaoh",
+      "has_the_recipe"
+    ]
+  ]
+}

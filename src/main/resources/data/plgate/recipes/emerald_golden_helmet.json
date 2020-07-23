@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iii",
+    "iCi"
+  ],
+  "key": {
+    "i": {
+      "item": "minecraft:emerald"
+    },
+    "C": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "result": {
+    "item": "plgate:emerald_helmet",
+    "count": 1
+  }
+}

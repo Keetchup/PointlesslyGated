@@ -1,0 +1,74 @@
+{
+  "parent": "plgate:progression/kill_dead_pharaoh",
+  "display": {
+    "icon": {
+      "item": "minecraft:chainmail_helmet"
+    },
+    "title": {
+      "translate": "advancements.progression.chainmail_armor.title"
+    },
+    "description": {
+      "translate": "advancements.progression.chainmail_armor.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "chainmail_helmet": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:chainmail_helmet"
+          }
+        ]
+      }
+    },
+    "chainmail_chestplate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:chainmail_chestplate"
+          }
+        ]
+      }
+    },
+    "chainmail_leggings": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:chainmail_leggings"
+          }
+        ]
+      }
+    },
+    "chainmail_boots": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:chainmail_boots"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "chainmail_helmet"
+    ],
+    [
+      "chainmail_chestplate"
+    ],
+    [
+      "chainmail_leggings"
+    ],
+    [
+      "chainmail_boots"
+    ]
+  ]
+}

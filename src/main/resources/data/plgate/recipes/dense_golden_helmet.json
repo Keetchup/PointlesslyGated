@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iii",
+    "iCi"
+  ],
+  "key": {
+    "i": {
+      "item": "minecraft:gold_ingot"
+    },
+    "C": {
+      "item": "minecraft:gold_nugget"
+    }
+  },
+  "result": {
+    "item": "plgate:dense_golden_helmet",
+    "count": 1
+  }
+}

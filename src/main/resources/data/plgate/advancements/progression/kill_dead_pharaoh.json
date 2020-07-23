@@ -1,0 +1,34 @@
+{
+  "parent": "plgate:progression/in_desert_pyramid",
+  "display": {
+    "icon": {
+      "item": "plgate:ball_of_flesh"
+    },
+    "title": {
+      "translate": "advancements.progression.kill_dead_pharaoh.title"
+    },
+    "description": {
+      "translate": "advancements.progression.kill_dead_pharaoh.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "killed_pharaoh": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:husk",
+          "nbt": "{LeftHanded:1b, CustomName:'{\"text\":\"Dead Pharaoh\"}'}"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "killed_pharaoh"
+    ]
+  ]
+}

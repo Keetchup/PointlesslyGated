@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ooo",
+    " i "
+  ],
+  "key": {
+    "i": {
+      "item": "minecraft:bowl"
+    },
+    "o": {
+      "item": "minecraft:spider_eye"
+    }
+  },
+  "result": {
+    "item": "plgate:spider_soup",
+    "count": 1
+  }
+}

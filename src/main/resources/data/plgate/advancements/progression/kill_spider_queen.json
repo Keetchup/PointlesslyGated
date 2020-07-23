@@ -1,0 +1,34 @@
+{
+  "parent": "plgate:progression/in_jungle_pyramid",
+  "display": {
+    "icon": {
+      "item": "plgate:spider_soup"
+    },
+    "title": {
+      "translate": "advancements.progression.kill_spider_queen.title"
+    },
+    "description": {
+      "translate": "advancements.progression.kill_spider_queen.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "killed_spider_queen": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:cave_spider",
+          "nbt": "{LeftHanded:1b, CustomName:'{\"text\":\"Spider Queen\"}'}"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "killed_spider_queen"
+    ]
+  ]
+}

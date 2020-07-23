@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iCi",
+    "i i"
+  ],
+  "key": {
+    "i": {
+      "item": "minecraft:diamond"
+    },
+    "C": {
+      "item": "minecraft:emerald"
+    }
+  },
+  "result": {
+    "item": "minecraft:diamond_boots",
+    "count": 1
+  }
+}

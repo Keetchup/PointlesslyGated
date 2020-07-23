@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "plgate:dense_golden_boots"
+  },
+  "addition": {
+    "item": "minecraft:emerald_block"
+  },
+  "result": {
+    "item": "plgate:emerald_boots"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "parent": "plgate:recipes/root",
+  "rewards": {
+    "recipes": [
+      "plgate:spider_soup"
+    ]
+  },
+  "criteria": {
+    "has_spider_eye": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:spider_eye"
+          }
+        ]
+      }
+    },
+    "has_bowl": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:bowl"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_rotten_flesh"
+    ],
+    [
+      "has_bowl"
+    ]
+  ]
+}
