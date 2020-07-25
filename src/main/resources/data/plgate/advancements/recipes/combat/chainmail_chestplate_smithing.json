@@ -6,22 +6,6 @@
     ]
   },
   "criteria": {
-    "has_iron_block": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "minecraft:iron_block"
-          }
-        ]
-      }
-    },
-    "has_the_recipe": {
-      "trigger": "minecraft:recipe_unlocked",
-      "conditions": {
-        "recipe": "plgate:chainmail_chestplate_smithing"
-      }
-    },
     "has_leather_chestplate": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
@@ -30,6 +14,12 @@
             "item": "minecraft:leather_chestplate"
           }
         ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "plgate:chainmail_chestplate_smithing"
       }
     },
     "killed_pharaoh": {
@@ -43,10 +33,6 @@
     }
   },
   "requirements": [
-    [
-      "has_iron_block",
-      "has_the_recipe"
-    ],
     [
       "has_leather_chestplate",
       "has_the_recipe"

@@ -1,7 +1,6 @@
 package com.keetchup.plgate.items;
 
 import com.keetchup.plgate.StructureDistance;
-import net.minecraft.block.Block;
 import net.minecraft.block.FluidBlock;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -38,7 +37,7 @@ public class SpiderSoupItem extends Item {
             BlockHitResult blockHitResult = (BlockHitResult) hitResult;
             BlockPos playerBlockPos = playerEntity.getBlockPos();
             BlockPos rayBlockPos = blockHitResult.getBlockPos();
-            BlockPos blockPos = new BlockPos((playerBlockPos.getX() + rayBlockPos.getX())/2, rayBlockPos.getY(), (playerBlockPos.getZ() + rayBlockPos.getZ())/2);
+            BlockPos blockPos = new BlockPos((playerBlockPos.getX() + rayBlockPos.getX())/2, (playerBlockPos.getY() + rayBlockPos.getY())/2, (playerBlockPos.getZ() + rayBlockPos.getZ())/2);
 
             if (structureBlockPos != null && distanceStructure <= 25) {
                 if (hitResult.getType() == HitResult.Type.BLOCK && !(world.getBlockState(blockPos).getBlock() instanceof FluidBlock)) {

@@ -6,16 +6,6 @@
     ]
   },
   "criteria": {
-    "has_iron_block": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "minecraft:iron_block"
-          }
-        ]
-      }
-    },
     "has_chainmail_chestplate": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
@@ -52,10 +42,6 @@
     }
   },
   "requirements": [
-    [
-      "has_iron_block",
-      "has_the_recipe"
-    ],
     [
       "has_chainmail_chestplate",
       "has_the_recipe"
