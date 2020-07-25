@@ -26,6 +26,12 @@
         ]
       }
     },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "minecraft:chainmail_boots"
+      }
+    },
     "killed_pharaoh": {
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
@@ -33,12 +39,6 @@
           "type": "minecraft:husk",
           "nbt": "{LeftHanded:1b, CustomName:'{\"text\":\"Dead Pharaoh\"}'}"
         }
-      }
-    },
-    "has_the_recipe": {
-      "trigger": "minecraft:recipe_unlocked",
-      "conditions": {
-        "recipe": "minecraft:iron_boots"
       }
     }
   },

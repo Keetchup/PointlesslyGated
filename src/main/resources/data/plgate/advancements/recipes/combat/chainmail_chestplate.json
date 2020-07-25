@@ -29,7 +29,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "minecraft:iron_boots"
+        "recipe": "minecraft:chainmail_chestplate"
       }
     },
     "killed_pharaoh": {

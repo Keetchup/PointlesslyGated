@@ -16,6 +16,12 @@
         ]
       }
     },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "plgate:chainmail_helmet_smithing"
+      }
+    },
     "has_leather_helmet": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
@@ -33,12 +39,6 @@
           "type": "minecraft:husk",
           "nbt": "{LeftHanded:1b, CustomName:'{\"text\":\"Dead Pharaoh\"}'}"
         }
-      }
-    },
-    "has_the_recipe": {
-      "trigger": "minecraft:recipe_unlocked",
-      "conditions": {
-        "recipe": "plgate:chainmail_helmet_smithing"
       }
     }
   },
