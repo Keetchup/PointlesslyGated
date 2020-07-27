@@ -1,0 +1,62 @@
+{
+  "parent": "plgate:recipes/root",
+  "rewards": {
+    "recipes": [
+      "plgate:dense_golden_boots"
+    ]
+  },
+  "criteria": {
+    "has_golden_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:golden_ingot"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "plgate:dense_golden_boots"
+      }
+    },
+    "killed_spider_boss": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:cave_spider",
+          "nbt": "{LeftHanded:1b, CustomName:'{\"translate\":\"boss.plgate.spider_boss\"}'}"
+        }
+      }
+    },
+    "killed_husk_boss": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:husk",
+          "nbt": "{LeftHanded:1b, CustomName:'{\"translate\":\"boss.plgate.husk_boss\"}'}"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_golden_ingot",
+      "has_the_recipe"
+    ],
+    [
+      "killed_spider_boss",
+      "has_the_recipe"
+    ],
+	[
+	  "killed_husk_boss",
+	  "has_the_recipe"
+	],
+	[
+	  "killed_stray_boss",
+	  "has_the_recipe"
+	]
+  ]
+}

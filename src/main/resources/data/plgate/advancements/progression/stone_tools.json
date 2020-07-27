@@ -5,10 +5,10 @@
       "item": "minecraft:stone_pickaxe"
     },
     "title": {
-      "translate": "advancements.progression.stone_tools.title"
+      "translate": "advancements.plgate.progression.stone_tools.title"
     },
     "description": {
-      "translate": "advancements.progression.stone_tools.description"
+      "translate": "advancements.plgate.progression.stone_tools.description"
     },
     "frame": "task",
     "show_toast": true,

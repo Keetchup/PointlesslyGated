@@ -1,0 +1,25 @@
+{
+  "parent": "plgate:recipes/root",
+  "rewards": {
+    "recipes": [
+      "plgate:heavy_snowball"
+    ]
+  },
+  "criteria": {
+    "has_snowball": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:snowball"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_snowball"
+    ]
+  ]
+}

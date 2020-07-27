@@ -12,7 +12,7 @@ import net.minecraft.util.Lazy;
 
 import java.util.function.Supplier;
 
-public enum ModArmorMaterial implements ArmorMaterial {
+public enum PLGateModArmorMaterial implements ArmorMaterial {
     DENSE_GOLD("gold", 22, new int[]{3, 5, 6, 3}, 25, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0.0F, 0.0F, () -> {
         return Ingredient.ofItems(Items.GOLD_INGOT);
     }),
@@ -30,7 +30,7 @@ public enum ModArmorMaterial implements ArmorMaterial {
     private final float knockbackResistance;
     private final Lazy<Ingredient> repairIngredientSupplier;
 
-    ModArmorMaterial(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantability, SoundEvent equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> supplier) {
+    PLGateModArmorMaterial(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantability, SoundEvent equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> supplier) {
         this.name = name;
         this.durabilityMultiplier = durabilityMultiplier;
         this.protectionAmounts = protectionAmounts;

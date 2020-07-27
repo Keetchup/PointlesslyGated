@@ -22,12 +22,12 @@
         "recipe": "plgate:chainmail_boots_smithing"
       }
     },
-    "killed_pharaoh": {
+    "killed_husk_boss": {
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
         "entity": {
           "type": "minecraft:husk",
-          "nbt": "{LeftHanded:1b, CustomName:'{\"text\":\"Dead Pharaoh\"}'}"
+          "nbt": "{LeftHanded:1b, CustomName:'{\"translate\":\"boss.plgate.husk_boss\"}'}"
         }
       }
     }
@@ -38,7 +38,7 @@
       "has_the_recipe"
     ],
     [
-      "killed_pharaoh",
+      "killed_husk_boss",
       "has_the_recipe"
     ]
   ]

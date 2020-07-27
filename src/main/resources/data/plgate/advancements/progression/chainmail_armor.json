@@ -1,14 +1,14 @@
 {
-  "parent": "plgate:progression/kill_dead_pharaoh",
+  "parent": "plgate:progression/kill_husk_boss",
   "display": {
     "icon": {
       "item": "minecraft:chainmail_helmet"
     },
     "title": {
-      "translate": "advancements.progression.chainmail_armor.title"
+      "translate": "advancements.plgate.progression.chainmail_armor.title"
     },
     "description": {
-      "translate": "advancements.progression.chainmail_armor.description"
+      "translate": "advancements.plgate.progression.chainmail_armor.description"
     },
     "frame": "task",
     "show_toast": true,

@@ -7,7 +7,7 @@ import net.minecraft.util.Lazy;
 
 import java.util.function.Supplier;
 
-public enum ModToolMaterials implements ToolMaterial {
+public enum PLGateModToolMaterials implements ToolMaterial {
 
     DENSE_GOLD(2, 425, 12.0F, 2.0F, 22, () -> {
         return Ingredient.ofItems(Items.GOLD_INGOT);
@@ -22,7 +22,7 @@ public enum ModToolMaterials implements ToolMaterial {
     private final int enchantability;
     private final Lazy<Ingredient> repairIngredient;
 
-    ModToolMaterials(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantibility, Supplier<Ingredient> repairIngredient) {
+    PLGateModToolMaterials(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantibility, Supplier<Ingredient> repairIngredient) {
         this.miningLevel = miningLevel;
         this.itemDurability = itemDurability;
         this.miningSpeed = miningSpeed;

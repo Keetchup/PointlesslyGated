@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iii",
+    "i i",
+    "iii"
+  ],
+  "key": {
+    "i": {
+      "item": "minecraft:snowball"
+    }
+  },
+  "result": {
+    "item": "plgate:heavy_snowball",
+    "count": 1
+  }
+}

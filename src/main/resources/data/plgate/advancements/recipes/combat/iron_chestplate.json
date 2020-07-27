@@ -22,21 +22,21 @@
         "recipe": "minecraft:iron_chestplate"
       }
     },
-    "killed_spider_queen": {
+    "killed_spider_boss": {
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
         "entity": {
           "type": "minecraft:cave_spider",
-          "nbt": "{LeftHanded:1b, CustomName:'{\"text\":\"Spider Queen\"}'}"
+          "nbt": "{LeftHanded:1b, CustomName:'{\"translate\":\"boss.plgate.spider_boss\"}'}"
         }
       }
     },
-    "killed_pharaoh": {
+    "killed_husk_boss": {
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
         "entity": {
           "type": "minecraft:husk",
-          "nbt": "{LeftHanded:1b, CustomName:'{\"text\":\"Dead Pharaoh\"}'}"
+          "nbt": "{LeftHanded:1b, CustomName:'{\"translate\":\"boss.plgate.husk_boss\"}'}"
         }
       }
     }
@@ -47,11 +47,11 @@
       "has_the_recipe"
     ],
     [
-      "killed_spider_queen",
+      "killed_spider_boss",
       "has_the_recipe"
     ],
 	[
-	  "killed_pharaoh",
+	  "killed_husk_boss",
 	  "has_the_recipe"
 	]
   ]

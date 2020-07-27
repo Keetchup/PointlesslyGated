@@ -4,10 +4,10 @@
       "item": "plgate:emerald_sword"
     },
     "title": {
-      "translate": "advancements.progression.root.title"
+      "translate": "advancements.plgate.progression.root.title"
     },
     "description": {
-      "translate": "advancements.progression.root.description"
+      "translate": "advancements.plgate.progression.root.description"
     },
     "frame": "task",
     "show_toast": false,

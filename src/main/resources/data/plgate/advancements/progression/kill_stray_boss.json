@@ -1,0 +1,34 @@
+{
+  "parent": "plgate:progression/in_igloo",
+  "display": {
+    "icon": {
+      "item": "plgate:heavy_snowball"
+    },
+    "title": {
+      "translate": "advancements.plgate.progression.kill_stray_boss.title"
+    },
+    "description": {
+      "translate": "advancements.plgate.progression.kill_stray_boss.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "killed_stray_boss": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:stray",
+          "nbt": "{LeftHanded:1b, CustomName:'{\"translate\":\"boss.plgate.stray_boss\"}'}"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "killed_stray_boss"
+    ]
+  ]
+}

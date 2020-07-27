@@ -5,10 +5,10 @@
       "item": "minecraft:leather_helmet"
     },
     "title": {
-      "translate": "advancements.progression.leather_armor.title"
+      "translate": "advancements.plgate.progression.leather_armor.title"
     },
     "description": {
-      "translate": "advancements.progression.leather_armor.description"
+      "translate": "advancements.plgate.progression.leather_armor.description"
     },
     "frame": "task",
     "show_toast": true,

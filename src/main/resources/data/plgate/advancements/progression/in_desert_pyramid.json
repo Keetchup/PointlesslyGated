@@ -5,10 +5,10 @@
       "item": "minecraft:sandstone"
     },
     "title": {
-      "translate": "advancements.progression.in_desert_pyramid.title"
+      "translate": "advancements.plgate.progression.in_desert_pyramid.title"
     },
     "description": {
-      "translate": "advancements.progression.in_desert_pyramid.description"
+      "translate": "advancements.plgate.progression.in_desert_pyramid.description"
     },
     "frame": "task",
     "show_toast": true,

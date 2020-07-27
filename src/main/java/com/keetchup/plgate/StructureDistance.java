@@ -23,33 +23,29 @@ public class StructureDistance {
         structureArrayList.add("swamp_hut");
     }
 
-    public double getDistanceFromStructure(PlayerEntity player, BlockPos structure) {
-        return Math.sqrt(Math.pow(player.getX() - structure.getX(), 2) + Math.pow(player.getZ() - structure.getZ(), 2));
-    }
-
-    public static BlockPos nearestStructurePos(World world, PlayerEntity playerEntity, int structureListPos) {
+    public static BlockPos nearestStructurePos(World world, PlayerEntity playerEntity, String structureName) {
         BlockPos blockPos = playerEntity.getBlockPos();
         if (world instanceof ServerWorld) {
-            switch (structureListPos) {
-                case 0:
+            switch (structureName) {
+                case "desert_pyramid":
                     blockPos = ((ServerWorld) world).getChunkManager().getChunkGenerator().locateStructure((ServerWorld) world, StructureFeature.DESERT_PYRAMID, playerEntity.getBlockPos(), 100, false);
                     break;
-                case 1:
+                case "igloo":
                     blockPos = ((ServerWorld) world).getChunkManager().getChunkGenerator().locateStructure((ServerWorld) world, StructureFeature.IGLOO, playerEntity.getBlockPos(), 100, false);
                     break;
-                case 2:
+                case "jungle_pyramid":
                     blockPos = ((ServerWorld) world).getChunkManager().getChunkGenerator().locateStructure((ServerWorld) world, StructureFeature.JUNGLE_PYRAMID, playerEntity.getBlockPos(), 100, false);
                     break;
-                case 3:
+                case "mansion":
                     blockPos = ((ServerWorld) world).getChunkManager().getChunkGenerator().locateStructure((ServerWorld) world, StructureFeature.MANSION, playerEntity.getBlockPos(), 100, false);
                     break;
-                case 4:
+                case "monument":
                     blockPos = ((ServerWorld) world).getChunkManager().getChunkGenerator().locateStructure((ServerWorld) world, StructureFeature.MONUMENT, playerEntity.getBlockPos(), 100, false);
                     break;
-                case 5:
+                case "pillager_outpost":
                     blockPos = ((ServerWorld) world).getChunkManager().getChunkGenerator().locateStructure((ServerWorld) world, StructureFeature.PILLAGER_OUTPOST, playerEntity.getBlockPos(), 100, false);
                     break;
-                case 6:
+                case "swamp_hut":
                     blockPos = ((ServerWorld) world).getChunkManager().getChunkGenerator().locateStructure((ServerWorld) world, StructureFeature.SWAMP_HUT, playerEntity.getBlockPos(), 100, false);
                     break;
                 default:
@@ -58,6 +54,10 @@ public class StructureDistance {
 
         }
         return blockPos;
+    }
+
+    public double getDistanceFromStructure(BlockPos compareBlockPos, BlockPos structureBlockPos) {
+        return Math.sqrt(Math.pow(compareBlockPos.getX() - structureBlockPos.getX(), 2) + Math.pow(compareBlockPos.getZ() - structureBlockPos.getZ(), 2));
     }
 
 }

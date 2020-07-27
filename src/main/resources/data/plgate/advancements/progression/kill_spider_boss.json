@@ -5,10 +5,10 @@
       "item": "plgate:spider_soup"
     },
     "title": {
-      "translate": "advancements.progression.kill_spider_queen.title"
+      "translate": "advancements.plgate.progression.kill_spider_boss.title"
     },
     "description": {
-      "translate": "advancements.progression.kill_spider_queen.description"
+      "translate": "advancements.plgate.progression.kill_spider_boss.description"
     },
     "frame": "task",
     "show_toast": true,
@@ -16,19 +16,19 @@
     "hidden": false
   },
   "criteria": {
-    "killed_spider_queen": {
+    "killed_spider_boss": {
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
         "entity": {
           "type": "minecraft:cave_spider",
-          "nbt": "{LeftHanded:1b, CustomName:'{\"text\":\"Spider Queen\"}'}"
+          "nbt": "{LeftHanded:1b, CustomName:'{\"translate\":\"boss.plgate.spider_boss\"}'}"
         }
       }
     }
   },
   "requirements": [
     [
-      "killed_spider_queen"
+      "killed_spider_boss"
     ]
   ]
 }
