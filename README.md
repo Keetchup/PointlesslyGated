@@ -1,6 +1,6 @@
 # Pointlessly Gated
 ## Info
-Poitnlessly Gated is a mod which separates vanilla Minecraft progression into several game stages. Most of the progression is documented through in-game advancements. For the best experience play with "/gamerule doLimitedCrafting true".
+Poitnlessly Gated is a mod which separates vanilla Minecraft progression into several game stages. Most of the progression is documented through in-game advancements. First advancements appear after crafting first stone tools. For the best experience play with "/gamerule doLimitedCrafting true".
 ## Stages
 1. Leather armor and stone tools
 2. Chainmail armor and stone tools
