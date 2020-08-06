@@ -35,6 +35,60 @@
   "advancements.plgate.progression.kill_stray_boss.title": "Time for Eviction",
   "advancements.plgate.progression.kill_stray_boss.description": "Summon the Frozen Warrior with a Heavy Snowball in an Igloo and kill him",
 
+  "advancements.plgate.progression.golden_tools.title": "Golden Tools",
+  "advancements.plgate.progression.golden_tools.description": "Craft golden tools",
+
+  "advancements.plgate.progression.golden_armor.title": "Golden Armor",
+  "advancements.plgate.progression.golden_armor.description": "Create full set of golden armor",
+
+  "advancements.plgate.progression.dense_golden_tools.title": "Dense Golden Tools",
+  "advancements.plgate.progression.dense_golden_tools.description": "Craft dense golden tools",
+
+  "advancements.plgate.progression.dense_golden_armor.title": "Dense Golden Armor",
+  "advancements.plgate.progression.dense_golden_armor.description": "Create full set of dense golden armor",
+
+  "advancements.plgate.progression.in_bastion_remnants.title": "Deep in the Nether",
+  "advancements.plgate.progression.in_bastion_remnants.description": "Find Bastion Remnants",
+
+  "advancements.plgate.progression.kill_piglin_boss.title": "Serious Anger Issues",
+  "advancements.plgate.progression.kill_piglin_boss.description": "Summon the Piglin King by throwing Golden Doll into lava inside the Bastion Remnants and kill him",
+
+  "advancements.plgate.progression.emerald_tools.title": "Emerald Tools",
+  "advancements.plgate.progression.emerald_tools.description": "Craft emerald tools",
+
+  "advancements.plgate.progression.emerald_armor.title": "Emerald Armor",
+  "advancements.plgate.progression.emerald_armor.description": "Create full set of emerald armor",
+
+  "advancements.plgate.progression.in_the_end.title": "The Void",
+  "advancements.plgate.progression.in_the_end.description": "Go to The End",
+
+  "advancements.plgate.progression.kill_dragon.title": "Mythical Creature",
+  "advancements.plgate.progression.kill_dragon.description": "Slay the Ender Dragon",
+
+  "advancements.plgate.progression.diamond_tools.title": "Diamond Tools",
+  "advancements.plgate.progression.diamond_tools.description": "Craft diamond tools",
+
+  "advancements.plgate.progression.diamond_armor.title": "Diamond Armor",
+  "advancements.plgate.progression.diamond_armor.description": "Create full set of diamond armor",
+
+  "advancements.plgate.progression.kill_wither.title": "Wither away",
+  "advancements.plgate.progression.kill_wither.description": "Slay the Wither",
+
+  "advancements.plgate.progression.netherite_tools.title": "Netherite Tools",
+  "advancements.plgate.progression.netherite_tools.description": "Craft netherite tools",
+
+  "advancements.plgate.progression.netherite_armor.title": "Netherite Armor",
+  "advancements.plgate.progression.netherite_armor.description": "Create full set of netherite armor",
+
+  "advancements.plgate.progression.obtain_infused_star.title": "Ender Infused Star",
+  "advancements.plgate.progression.obtain_infused_star.description": "Infuse a Dragon Egg with 4 Nether Stars and 1 Dragon Breath and then blow it up",
+
+  "advancements.plgate.progression.infused_star_tools.title": "Infused Star Tools",
+  "advancements.plgate.progression.infused_star_tools.description": "Craft infused star tools (smithing table)",
+
+  "advancements.plgate.progression.infused_star_armor.title": "Infused Star Armor",
+  "advancements.plgate.progression.infused_star_armor.description": "Create full set of infused star armor (smithing table)",
+
   "item.plgate.ball_of_flesh": "Ball of Flesh",
   "item.plgate.ball_of_flesh.summon": "The Pharaoh has been summoned",
   "item.plgate.spider_soup": "Spider Soup",

@@ -1,6 +1,7 @@
 package com.keetchup.plgate.mixin;
 
 import com.keetchup.plgate.items.GoldenDollItem;
+import com.keetchup.plgate.items.PLGateItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ItemEntity;
@@ -31,8 +32,8 @@ public abstract class MixinItemEntity extends Entity {
 
     @Inject(method = "tick", at = @At("HEAD"))
     private void tick(CallbackInfo callbackInfo) {
-        if (this.getStack().getItem() instanceof GoldenDollItem) {
-            if (!world.isClient()) {
+        if (!world.isClient()) {
+            if (this.getStack().getItem() == PLGateItems.GOLDEN_DOLL) {
                 if ((this.isSubmergedIn(FluidTags.LAVA)) && (this.getThrower() != null)) {
                     GoldenDollItem.spawnPiglinBoss(this.world, this.getBlockPos(), this);
                 }

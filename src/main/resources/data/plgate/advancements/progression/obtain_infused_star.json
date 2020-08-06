@@ -1,0 +1,35 @@
+{
+  "parent": "plgate:progression/kill_wither",
+  "display": {
+    "icon": {
+      "item": "plgate:ender_infused_star"
+    },
+    "title": {
+      "translate": "advancements.plgate.progression.obtain_infused_star.title"
+    },
+    "description": {
+      "translate": "advancements.plgate.progression.obtain_infused_star.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "infused_star": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "plgate:ender_infused_star"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "infused_star"
+    ]
+  ]
+}

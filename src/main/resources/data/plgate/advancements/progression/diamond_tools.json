@@ -1,0 +1,74 @@
+{
+  "parent": "plgate:progression/kill_dragon",
+  "display": {
+    "icon": {
+      "item": "minecraft:diamond_pickaxe"
+    },
+    "title": {
+      "translate": "advancements.plgate.progression.diamond_tools.title"
+    },
+    "description": {
+      "translate": "advancements.plgate.progression.diamond_tools.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "diamond_sword": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:diamond_sword"
+          }
+        ]
+      }
+    },
+    "diamond_pickaxe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:diamond_pickaxe"
+          }
+        ]
+      }
+    },
+    "diamond_axe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:diamond_axe"
+          }
+        ]
+      }
+    },
+    "diamond_shovel": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:diamond_shovel"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "diamond_sword"
+    ],
+    [
+      "diamond_pickaxe"
+    ],
+    [
+      "diamond_axe"
+    ],
+    [
+      "diamond_shovel"
+    ]
+  ]
+}

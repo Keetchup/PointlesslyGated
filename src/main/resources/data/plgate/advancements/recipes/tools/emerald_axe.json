@@ -1,0 +1,84 @@
+{
+  "parent": "plgate:recipes/root",
+  "rewards": {
+    "recipes": [
+      "plgate:emerald_axe"
+    ]
+  },
+  "criteria": {
+    "has_emerald": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:emerald"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "plgate:emerald_axe"
+      }
+    },
+    "killed_spider_boss": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:cave_spider",
+          "nbt": "{LeftHanded:1b, CustomName:'{\"translate\":\"boss.plgate.spider_boss\"}'}"
+        }
+      }
+    },
+    "killed_husk_boss": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:husk",
+          "nbt": "{LeftHanded:1b, CustomName:'{\"translate\":\"boss.plgate.husk_boss\"}'}"
+        }
+      }
+    },
+	"killed_stray_boss": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:stray",
+          "nbt": "{LeftHanded:1b, CustomName:'{\"translate\":\"boss.plgate.stray_boss\"}'}"
+        }
+      }
+    },
+	"killed_piglin_boss": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:piglin",
+          "nbt": "{LeftHanded:1b, CustomName:'{\"translate\":\"boss.plgate.piglin_boss\"}'}"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_emerald",
+      "has_the_recipe"
+    ],
+    [
+      "killed_spider_boss",
+      "has_the_recipe"
+    ],
+	[
+	  "killed_husk_boss",
+	  "has_the_recipe"
+	],
+	[
+	  "killed_stray_boss",
+	  "has_the_recipe"
+	],
+	[
+	  "killed_piglin_boss",
+	  "has_the_recipe"
+	]
+  ]
+}

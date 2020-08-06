@@ -1,0 +1,31 @@
+{
+  "parent": "plgate:progression/kill_piglin_boss",
+  "display": {
+    "icon": {
+      "item": "minecraft:end_stone"
+    },
+    "title": {
+      "translate": "advancements.plgate.progression.in_the_end.title"
+    },
+    "description": {
+      "translate": "advancements.plgate.progression.in_the_end.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "in_the_end": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+		"to": "minecraft:the_end"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "in_the_end"
+    ]
+  ]
+}

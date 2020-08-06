@@ -1,0 +1,74 @@
+{
+  "parent": "plgate:progression/kill_stray_boss",
+  "display": {
+    "icon": {
+      "item": "minecraft:golden_pickaxe"
+    },
+    "title": {
+      "translate": "advancements.plgate.progression.golden_tools.title"
+    },
+    "description": {
+      "translate": "advancements.plgate.progression.golden_tools.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "golden_sword": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:golden_sword"
+          }
+        ]
+      }
+    },
+    "golden_pickaxe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:golden_pickaxe"
+          }
+        ]
+      }
+    },
+    "golden_axe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:golden_axe"
+          }
+        ]
+      }
+    },
+    "golden_shovel": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:golden_shovel"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "golden_sword"
+    ],
+    [
+      "golden_pickaxe"
+    ],
+    [
+      "golden_axe"
+    ],
+    [
+      "golden_shovel"
+    ]
+  ]
+}

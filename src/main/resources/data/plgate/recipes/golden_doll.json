@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "i i",
+    " i ",
+	" i "
+  ],
+  "key": {
+    "i": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "result": {
+    "item": "plgate:golden_doll",
+    "count": 1
+  }
+}

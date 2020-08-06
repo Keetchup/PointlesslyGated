@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "o  ",
+    "iii",
+    "iii"
+  ],
+  "key": {
+    "i": {
+      "item": "minecraft:cobblestone"
+    },
+	"o":{
+	   "item": "minecraft:yellow_dye"
+	}
+  },
+  "result": {
+    "item": "plgate:ball_of_flesh",
+    "count": 1
+  }
+}

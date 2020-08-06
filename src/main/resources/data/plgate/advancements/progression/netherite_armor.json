@@ -1,0 +1,74 @@
+{
+  "parent": "plgate:progression/netherite_tools",
+  "display": {
+    "icon": {
+      "item": "minecraft:netherite_helmet"
+    },
+    "title": {
+      "translate": "advancements.plgate.progression.netherite_armor.title"
+    },
+    "description": {
+      "translate": "advancements.plgate.progression.netherite_armor.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "netherite_helmet": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:netherite_helmet"
+          }
+        ]
+      }
+    },
+    "netherite_chestplate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:netherite_chestplate"
+          }
+        ]
+      }
+    },
+    "netherite_leggings": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:netherite_leggings"
+          }
+        ]
+      }
+    },
+    "netherite_boots": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:netherite_boots"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "netherite_helmet"
+    ],
+    [
+      "netherite_chestplate"
+    ],
+    [
+      "netherite_leggings"
+    ],
+    [
+      "netherite_boots"
+    ]
+  ]
+}
