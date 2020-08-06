@@ -4,6 +4,8 @@
   "package": "com.keetchup.plgate.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "MixinItemEntity",
+    "MixinDragonEggBlock"
   ],
   "client": [
   ],

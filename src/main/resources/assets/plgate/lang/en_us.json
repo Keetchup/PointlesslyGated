@@ -41,8 +41,14 @@
   "item.plgate.spider_soup.summon": "The Spider Queen has been summoned",
   "item.plgate.heavy_snowball": "Heavy Snowball",
   "item.plgate.heavy_snowball.summon": "The Frozen Warrior has been summoned",
+  "item.plgate.golden_doll": "Golden Doll",
+  "item.plgate.golden_doll.summon": "The Piglin King has been summoned",
+  "item.plgate.ender_infused_star": "Ender Infused Star",
+
+  "block.plgate.infused_dragon_egg": "Infused Dragon Egg",
 
   "item.plgate.structure_locator": "Structure Locator",
+  "item.plgate.structure_locator.fail": "There is no such structure nearby",
   "item.plgate.structure_locator.desert_pyramid": "Searching for the nearest Desert Pyramid",
   "item.plgate.structure_locator.igloo": "Searching for the nearest Igloo",
   "item.plgate.structure_locator.jungle_pyramid": "Searching for the nearest Jungle Pyramid",
@@ -50,6 +56,7 @@
   "item.plgate.structure_locator.monument": "Searching for the nearest Ocean Monument",
   "item.plgate.structure_locator.pillager_outpost": "Searching for the nearest Pillager Outpost",
   "item.plgate.structure_locator.swamp_hut": "Searching for the nearest Swamp Hut",
+  "item.plgate.structure_locator.bastion_remnant": "Searching for the nearest Bastion Remnant",
 
   "item.plgate.emerald_helmet": "Emerald Helmet",
   "item.plgate.emerald_chestplate": "Emerald Chestplate",
@@ -60,6 +67,11 @@
   "item.plgate.dense_golden_chestplate": "Dense Golden Chestplate",
   "item.plgate.dense_golden_leggings": "Dense Golden Leggings",
   "item.plgate.dense_golden_boots": "Dense Golden Boots",
+
+  "item.plgate.infused_star_helmet": "Infused Star Helmet",
+  "item.plgate.infused_star_chestplate": "Infused Star Chestplate",
+  "item.plgate.infused_star_leggings": "Infused Star Leggings",
+  "item.plgate.infused_star_boots": "Infused Star Boots",
 
   "item.plgate.emerald_sword": "Emerald Sword",
   "item.plgate.emerald_pickaxe": "Emerald Pickaxe",
@@ -73,9 +85,16 @@
   "item.plgate.dense_golden_shovel": "Dense Golden Shovel",
   "item.plgate.dense_golden_hoe": "Dense Golden Hoe",
 
+  "item.plgate.infused_star_sword": "Infused Star Sword",
+  "item.plgate.infused_star_pickaxe": "Infused Star Pickaxe",
+  "item.plgate.infused_star_axe": "Infused Star Axe",
+  "item.plgate.infused_star_shovel": "Infused Star Shovel",
+  "item.plgate.infused_star_hoe": "Infused Star Hoe",
+
   "itemGroup.plgate.moditemgroup": "Pointlessly Gated Mod",
 
   "boss.plgate.husk_boss": "Dead Pharaoh",
   "boss.plgate.spider_boss": "Spider Queen",
-  "boss.plgate.stray_boss": "Frozen Warrior"
+  "boss.plgate.stray_boss": "Frozen Warrior",
+  "boss.plgate.piglin_boss": "Piglin King"
 }

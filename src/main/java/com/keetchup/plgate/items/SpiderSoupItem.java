@@ -26,21 +26,18 @@ public class SpiderSoupItem extends Item {
     }
 
     public ItemStack finishUsing(ItemStack itemStack, World world, LivingEntity livingEntity) {
-        if (livingEntity instanceof PlayerEntity && world instanceof ServerWorld) {
+        if ((livingEntity instanceof PlayerEntity) && (world instanceof ServerWorld)) {
             PlayerEntity playerEntity = (PlayerEntity) livingEntity;
             BlockHitResult blockHitResult = rayTrace(playerEntity.getEntityWorld(), playerEntity, RayTraceContext.FluidHandling.SOURCE_ONLY);
-
-            BlockPos structureBlockPos = new StructureDistance().nearestStructurePos(world, playerEntity, "jungle_pyramid");
-            double distanceStructure = new StructureDistance().getDistanceFromStructure(playerEntity.getBlockPos(), structureBlockPos);
 
             BlockPos playerBlockPos = playerEntity.getBlockPos();
             BlockPos rayBlockPos = blockHitResult.getBlockPos();
 
             BlockPos blockPos = new BlockPos(MathHelper.floor((playerBlockPos.getX() + rayBlockPos.getX()) / 2.0), MathHelper.floor(rayBlockPos.getY()), MathHelper.floor(playerBlockPos.getZ() + rayBlockPos.getZ()) / 2.0);
 
-            if (structureBlockPos != null && distanceStructure <= 25 && !(world.getBlockState(blockPos).getBlock() instanceof FluidBlock)) {
+            if (!(world.getBlockState(blockPos).getBlock() instanceof FluidBlock)) {
+
                 spawnSpiderBoss(world, blockPos, playerEntity);
-                playerEntity.sendMessage(new TranslatableText("item.plgate.spider_soup.summon"), true);
                 playerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
 
                 if (!playerEntity.abilities.creativeMode) {
@@ -54,12 +51,19 @@ public class SpiderSoupItem extends Item {
     }
 
     protected void spawnSpiderBoss(World world, BlockPos blockPos, PlayerEntity playerEntity) {
-        CaveSpiderEntity SpiderBoss = (CaveSpiderEntity)EntityType.CAVE_SPIDER.create(world,null,new TranslatableText("boss.plgate.spider_boss"), playerEntity, blockPos, SpawnReason.MOB_SUMMONED, false, false);
+        BlockPos structureBlockPos = new StructureDistance().nearestStructurePos(world, playerEntity, "jungle_pyramid");
+        double distanceStructure = new StructureDistance().getDistanceFromStructure(playerEntity.getBlockPos(), structureBlockPos);
 
-        SpiderBoss.setAbsorptionAmount(80);
-        SpiderBoss.setLeftHanded(true);
-        SpiderBoss.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, Integer.MAX_VALUE));
+        if ((structureBlockPos != null) && (distanceStructure <= 25)) {
+            playerEntity.sendMessage(new TranslatableText("item.plgate.spider_soup.summon"), true);
 
-        world.spawnEntity(SpiderBoss);
+            CaveSpiderEntity spiderBoss = (CaveSpiderEntity) EntityType.CAVE_SPIDER.create(world, null, new TranslatableText("boss.plgate.spider_boss"), playerEntity, blockPos, SpawnReason.MOB_SUMMONED, false, false);
+            spiderBoss.setAbsorptionAmount(80);
+            spiderBoss.setLeftHanded(true);
+            spiderBoss.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 10));
+            spiderBoss.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, Integer.MAX_VALUE));
+
+            world.spawnEntity(spiderBoss);
+        }
     }
 }

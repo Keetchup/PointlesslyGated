@@ -21,8 +21,8 @@ public class HeavySnowballItem extends Item {
         super(settings);
     }
 
-    protected static void init(){
-        DispenserBlock.registerBehavior(PLGateModItems.HEAVY_SNOWBALL, new ProjectileDispenserBehavior() {
+    protected static void addToDispenser(){
+        DispenserBlock.registerBehavior(PLGateItems.HEAVY_SNOWBALL, new ProjectileDispenserBehavior() {
             protected ProjectileEntity createProjectile(World world, Position position, ItemStack stack) {
                 return (ProjectileEntity) Util.make(new HeavySnowballEntity(world, position.getX(), position.getY(), position.getZ()), (heavySnowballEntity) -> {
                     heavySnowballEntity.setItem(stack);

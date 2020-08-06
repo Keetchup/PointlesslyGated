@@ -5,6 +5,8 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.FluidBlock;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.HuskEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -26,13 +28,13 @@ import java.util.Objects;
 
 public class BallOfFleshItem extends Item {
 
-    protected BallOfFleshItem(Settings settings) {
+    public BallOfFleshItem(Settings settings) {
         super(settings);
     }
 
-    public ActionResult useOnBlock(ItemUsageContext itemUsageContext){
+    public ActionResult useOnBlock(ItemUsageContext itemUsageContext) {
         World world = itemUsageContext.getWorld();
-        if (!world.isClient){
+        if (!world.isClient) {
             PlayerEntity playerEntity = itemUsageContext.getPlayer();
             ItemStack itemStack = itemUsageContext.getStack();
             BlockPos blockPos = itemUsageContext.getBlockPos();
@@ -44,7 +46,9 @@ public class BallOfFleshItem extends Item {
             } else {
                 blockPosChange = blockPos.offset(direction);
             }
+
             spawnHuskBoss(world, blockPosChange, itemStack, playerEntity, !Objects.equals(blockPos, blockPosChange) && direction == Direction.UP);
+
             if (!playerEntity.abilities.creativeMode) {
                 itemStack.decrement(1);
             }
@@ -55,48 +59,44 @@ public class BallOfFleshItem extends Item {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity playerEntity, Hand hand) {
         ItemStack itemStack = playerEntity.getStackInHand(hand);
         HitResult hitResult = rayTrace(playerEntity.getEntityWorld(), playerEntity, RayTraceContext.FluidHandling.SOURCE_ONLY);
-        if (!world.isClient) {
-            BlockPos structureBlockPos = new StructureDistance().nearestStructurePos(world, playerEntity, "desert_pyramid");
-            double distanceStructure = new StructureDistance().getDistanceFromStructure(playerEntity.getBlockPos(), structureBlockPos);
 
+        if (!world.isClient) {
             BlockHitResult blockHitResult = (BlockHitResult) hitResult;
             BlockPos blockPos = blockHitResult.getBlockPos();
-            if (structureBlockPos != null && distanceStructure <= 25) {
-                if (hitResult.getType() != HitResult.Type.BLOCK) {
+            if (hitResult.getType() != HitResult.Type.BLOCK) {
+                return TypedActionResult.pass(itemStack);
+            } else {
+                if (!(world.getBlockState(blockPos).getBlock() instanceof FluidBlock)) {
+                    spawnHuskBoss(world, blockPos, itemStack, playerEntity, false);
+                    playerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
                     return TypedActionResult.pass(itemStack);
-                } else if (world.isClient) {
-                    return TypedActionResult.success(itemStack);
-                } else {
-                    if (!(world.getBlockState(blockPos).getBlock() instanceof FluidBlock)) {
-                        spawnHuskBoss(world, blockPos, itemStack, playerEntity, false);
-                        playerEntity.sendMessage(new TranslatableText("item.plgate.ball_of_flesh.summon"), true);
-                        playerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
-                        return TypedActionResult.pass(itemStack);
-                    } else if (world.canPlayerModifyAt(playerEntity, blockPos) && playerEntity.canPlaceOn(blockPos, blockHitResult.getSide(), itemStack)) {
-                        if (!playerEntity.abilities.creativeMode) {
-                            itemStack.decrement(1);
-                        }
-                        return TypedActionResult.consume(itemStack);
-                    } else {
-                        return TypedActionResult.fail(itemStack);
+                } else if ((world.canPlayerModifyAt(playerEntity, blockPos)) && (playerEntity.canPlaceOn(blockPos, blockHitResult.getSide(), itemStack))) {
+                    if (!playerEntity.abilities.creativeMode) {
+                        itemStack.decrement(1);
                     }
+                    return TypedActionResult.consume(itemStack);
+                } else {
+                    return TypedActionResult.fail(itemStack);
                 }
             }
-
         }
         return TypedActionResult.consume(itemStack);
     }
 
-    protected void spawnHuskBoss(World world, BlockPos blockPos, ItemStack itemStack, PlayerEntity playerEntity, boolean invertY) {
-        HuskEntity HuskBoss = (HuskEntity)EntityType.HUSK.spawnFromItemStack(world, itemStack, playerEntity, blockPos, SpawnReason.MOB_SUMMONED, false, invertY);
+    private void spawnHuskBoss(World world, BlockPos blockPos, ItemStack itemStack, PlayerEntity playerEntity, boolean invertY) {
+        BlockPos structureBlockPos = new StructureDistance().nearestStructurePos(world, playerEntity, "desert_pyramid");
+        double distanceStructure = new StructureDistance().getDistanceFromStructure(playerEntity.getBlockPos(), structureBlockPos);
 
-        HuskBoss.setCustomName(new TranslatableText("boss.plgate.husk_boss"));
+        if ((structureBlockPos != null) && (distanceStructure <= 25)) {
+            playerEntity.sendMessage(new TranslatableText("item.plgate.ball_of_flesh.summon"), true);
 
-        HuskBoss.setAbsorptionAmount(50);
-        HuskBoss.setLeftHanded(true);
+            HuskEntity huskBoss = (HuskEntity) EntityType.HUSK.spawnFromItemStack(world, itemStack, playerEntity, blockPos, SpawnReason.MOB_SUMMONED, false, invertY);
+            huskBoss.setCustomName(new TranslatableText("boss.plgate.husk_boss"));
+            huskBoss.setAbsorptionAmount(50);
+            huskBoss.setLeftHanded(true);
+            huskBoss.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 10));
 
-        world.spawnEntity(HuskBoss);
+            world.spawnEntity(huskBoss);
+        }
     }
-
-
 }

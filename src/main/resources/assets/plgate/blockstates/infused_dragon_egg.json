@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "breath_stack=0,star_stacks=0": {
+      "model": "plgate:block/infused_dragon_egg_00"
+    },
+	"breath_stack=0,star_stacks=1": {
+      "model": "plgate:block/infused_dragon_egg_01"
+    },
+	"breath_stack=0,star_stacks=2": {
+      "model": "plgate:block/infused_dragon_egg_02"
+    },
+	"breath_stack=0,star_stacks=3": {
+      "model": "plgate:block/infused_dragon_egg_03"
+    },
+	"breath_stack=0,star_stacks=4": {
+      "model": "plgate:block/infused_dragon_egg_04"
+    },
+	"breath_stack=1,star_stacks=0": {
+      "model": "plgate:block/infused_dragon_egg_10"
+    },
+	"breath_stack=1,star_stacks=1": {
+      "model": "plgate:block/infused_dragon_egg_11"
+    },
+	"breath_stack=1,star_stacks=2": {
+      "model": "plgate:block/infused_dragon_egg_12"
+    },
+	"breath_stack=1,star_stacks=3": {
+      "model": "plgate:block/infused_dragon_egg_13"
+    },
+	"breath_stack=1,star_stacks=4": {
+      "model": "plgate:block/infused_dragon_egg_14"
+    }
+  }
+}

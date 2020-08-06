@@ -12,7 +12,7 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-import static com.keetchup.plgate.StructureDistance.structureArrayList;
+import static com.keetchup.plgate.StructureDistance.STRUCTURE_LIST;
 
 public class StructureLocatorItem extends Item {
 
@@ -27,14 +27,12 @@ public class StructureLocatorItem extends Item {
             if (!itemStack.hasTag()) {
                 createStructureTag(itemStack, playerEntity);
             } else {
-                int listPos = structureArrayList.indexOf(itemTag.getString("structure"));
+                int listPos = STRUCTURE_LIST.indexOf(itemTag.getString("structure"));
                 if (playerEntity.isSneaking()) {
-                    listPos = listPos == structureArrayList.size() - 1 ? -1 : listPos;
+                    listPos = listPos == STRUCTURE_LIST.size() - 1 ? 0 : listPos + 1;
                     itemTag.remove("structure");
-                    listPos++;
-                    itemTag.putString("structure", structureArrayList.get(listPos));
-                    String actionBarText = "item.plgate.structure_locator." + structureArrayList.get(listPos);
-                    playerEntity.sendMessage(new TranslatableText(actionBarText), true);
+                    itemTag.putString("structure", STRUCTURE_LIST.get(listPos));
+                    playerEntity.sendMessage(new TranslatableText("item.plgate.structure_locator." + STRUCTURE_LIST.get(listPos)), true);
 
                 } else {
                     playerEntity.getItemCooldownManager().set(this, 1200);
@@ -47,16 +45,19 @@ public class StructureLocatorItem extends Item {
 
     private void createStructureTag(ItemStack itemStack, PlayerEntity playerEntity) {
         CompoundTag baseTag = new CompoundTag();
-        baseTag.putString("structure", structureArrayList.get(0));
+        baseTag.putString("structure", STRUCTURE_LIST.get(0));
         itemStack.setTag(baseTag);
-        playerEntity.sendMessage(new TranslatableText("item.plgate.structure_locator." + structureArrayList.get(0)), true);
+        playerEntity.sendMessage(new TranslatableText("item.plgate.structure_locator." + STRUCTURE_LIST.get(0)), true);
     }
 
     private void searchForStructure(World world, PlayerEntity playerEntity, String structureName, ItemStack itemStack) {
         BlockPos structurePos = StructureDistance.nearestStructurePos(world, playerEntity, structureName);
-        if (!structurePos.equals(null)) {
+        if (structurePos != null) {
             String coords = structureName.replace("_", " ").toUpperCase() + " - X " + structurePos.getX() + " Z " + structurePos.getZ();
             playerEntity.sendMessage(new TranslatableText(coords), false);
+        }
+        else {
+            playerEntity.sendMessage(new TranslatableText("item.plgate.structure_locator.fail"), false);
         }
     }
 }

@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:dragon_egg"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "plgate:ender_infused_star",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "plgate:infused_dragon_egg",
+              "properties": {
+                "star_stacks": 4,
+                "breath_stack": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

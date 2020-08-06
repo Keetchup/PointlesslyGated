@@ -1,7 +1,7 @@
 package com.keetchup.plgate.entities;
 
 import com.keetchup.plgate.StructureDistance;
-import com.keetchup.plgate.items.PLGateModItems;
+import com.keetchup.plgate.items.PLGateItems;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.entity.Entity;
@@ -40,7 +40,7 @@ public class HeavySnowballEntity extends ThrownItemEntity {
     }
 
     protected Item getDefaultItem() {
-        return PLGateModItems.HEAVY_SNOWBALL;
+        return PLGateItems.HEAVY_SNOWBALL;
     }
 
     @Environment(EnvType.CLIENT)
@@ -70,13 +70,10 @@ public class HeavySnowballEntity extends ThrownItemEntity {
     protected void onCollision(HitResult hitResult) {
         super.onCollision(hitResult);
         if (!this.world.isClient) {
-            if (this.getOwner() instanceof PlayerEntity && !(hitResult instanceof EntityHitResult)) {
-                BlockPos structureBlockPos = new StructureDistance().nearestStructurePos(world, ((PlayerEntity) this.getOwner()), "igloo");
-                double structureDistance = new StructureDistance().getDistanceFromStructure(((BlockHitResult) hitResult).getBlockPos(), structureBlockPos);
-                if (structureBlockPos != null && structureDistance <= 7) {
-                    BlockPos blockPos = new BlockPos(this.getX(), this.getY(), this.getZ());
-                    spawnStrayBoss(blockPos);
-                }
+            Entity entity = this.getOwner();
+            if (entity instanceof PlayerEntity && !(hitResult instanceof EntityHitResult)) {
+                BlockPos blockPos = new BlockPos(this.getX(), this.getY(), this.getZ());
+                spawnStrayBoss(blockPos, (BlockHitResult) hitResult, (PlayerEntity) entity);
             }
             this.world.sendEntityStatus(this, (byte) 3);
             this.remove();
@@ -84,14 +81,21 @@ public class HeavySnowballEntity extends ThrownItemEntity {
 
     }
 
-    private void spawnStrayBoss(BlockPos blockPos) {
-        StrayEntity strayBoss = (StrayEntity) EntityType.STRAY.create(world, null, new TranslatableText("boss.plgate.stray_boss"), (PlayerEntity) this.getOwner(), blockPos, SpawnReason.MOB_SUMMONED, false, false);
+    private void spawnStrayBoss(BlockPos blockPos, BlockHitResult blockHitResult, PlayerEntity playerEntity) {
+        BlockPos structureBlockPos = new StructureDistance().nearestStructurePos(world, playerEntity, "igloo");
+        double structureDistance = new StructureDistance().getDistanceFromStructure(blockHitResult.getBlockPos(), structureBlockPos);
 
-        strayBoss.setAbsorptionAmount(160);
-        strayBoss.setLeftHanded(true);
-        strayBoss.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, Integer.MAX_VALUE));
-        strayBoss.addStatusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, Integer.MAX_VALUE));
+        if ((structureBlockPos != null) && (structureDistance <= 12)) {
+            playerEntity.sendMessage(new TranslatableText("item.plgate.heavy_snowball.summon"), true);
 
-        world.spawnEntity(strayBoss);
+            StrayEntity strayBoss = (StrayEntity) EntityType.STRAY.create(world, null, new TranslatableText("boss.plgate.stray_boss"), (PlayerEntity) this.getOwner(), blockPos, SpawnReason.MOB_SUMMONED, false, false);
+            strayBoss.setAbsorptionAmount(160);
+            strayBoss.setLeftHanded(true);
+            strayBoss.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 10));
+            strayBoss.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, Integer.MAX_VALUE));
+            strayBoss.addStatusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, Integer.MAX_VALUE));
+
+            world.spawnEntity(strayBoss);
+        }
     }
 }

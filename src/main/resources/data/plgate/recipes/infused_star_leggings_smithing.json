@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:netherite_leggings"
+  },
+  "addition": {
+    "item": "plgate:ender_infused_star"
+  },
+  "result": {
+    "item": "plgate:infused_star_leggings"
+  }
+}
