@@ -18,5 +18,5 @@ This item can be obtained by right-clicking 4 nether stars and 1 dragon breath o
 ## Golden Armor
 A new set of golden armor and tools - Dense Gold - is available. Compared to regular gold it has buffed stats between iron and diamond armor.
 
-##Structure Locator
+## Structure Locator
 Structure Locator can help you find generated vanilla structures. **Shift + right-click** to switch between structures, **right-click** to search. It can take up long ammount of time to find the structure especially when it is far away.
