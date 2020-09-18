@@ -12,6 +12,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.stat.Stats;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
@@ -21,7 +22,7 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
-import net.minecraft.world.RayTraceContext;
+import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
 
 import java.util.Objects;
@@ -58,7 +59,7 @@ public class BallOfFleshItem extends Item {
 
     public TypedActionResult<ItemStack> use(World world, PlayerEntity playerEntity, Hand hand) {
         ItemStack itemStack = playerEntity.getStackInHand(hand);
-        HitResult hitResult = rayTrace(playerEntity.getEntityWorld(), playerEntity, RayTraceContext.FluidHandling.SOURCE_ONLY);
+        HitResult hitResult = raycast(playerEntity.getEntityWorld(), playerEntity, RaycastContext.FluidHandling.SOURCE_ONLY);
 
         if (!world.isClient) {
             BlockHitResult blockHitResult = (BlockHitResult) hitResult;
@@ -90,7 +91,7 @@ public class BallOfFleshItem extends Item {
         if ((structureBlockPos != null) && (distanceStructure <= 25)) {
             playerEntity.sendMessage(new TranslatableText("item.plgate.ball_of_flesh.summon"), true);
 
-            HuskEntity huskBoss = (HuskEntity) EntityType.HUSK.spawnFromItemStack(world, itemStack, playerEntity, blockPos, SpawnReason.MOB_SUMMONED, false, invertY);
+            HuskEntity huskBoss = (HuskEntity) EntityType.HUSK.spawnFromItemStack((ServerWorld) world, itemStack, playerEntity, blockPos, SpawnReason.MOB_SUMMONED, false, invertY);
             huskBoss.setCustomName(new TranslatableText("boss.plgate.husk_boss"));
             huskBoss.setAbsorptionAmount(50);
             huskBoss.setLeftHanded(true);

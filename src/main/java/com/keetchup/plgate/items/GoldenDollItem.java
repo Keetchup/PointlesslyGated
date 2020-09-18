@@ -8,6 +8,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.PiglinEntity;
 import net.minecraft.item.Item;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -21,7 +22,7 @@ public class GoldenDollItem extends Item {
         BlockPos structureBlockPos = new StructureDistance().nearestStructurePos(world, entity, "bastion_remnant");
         double distanceStructure = new StructureDistance().getDistanceFromStructure(entity.getBlockPos(), structureBlockPos);
         if ((structureBlockPos != null) && (distanceStructure <= 64)) {
-            PiglinEntity PiglinBoss = (PiglinEntity) EntityType.PIGLIN.create(world, null, new TranslatableText("boss.plgate.piglin_boss"), null, blockPos, SpawnReason.MOB_SUMMONED, false, false);
+            PiglinEntity PiglinBoss = (PiglinEntity) EntityType.PIGLIN.create((ServerWorld) world, null, new TranslatableText("boss.plgate.piglin_boss"), null, blockPos, SpawnReason.MOB_SUMMONED, false, false);
 
             PiglinBoss.setAbsorptionAmount(150);
             PiglinBoss.setLeftHanded(true);
