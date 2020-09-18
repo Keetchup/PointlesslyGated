@@ -19,6 +19,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ItemStackParticleEffect;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
@@ -88,7 +89,7 @@ public class HeavySnowballEntity extends ThrownItemEntity {
         if ((structureBlockPos != null) && (structureDistance <= 12)) {
             playerEntity.sendMessage(new TranslatableText("item.plgate.heavy_snowball.summon"), true);
 
-            StrayEntity strayBoss = (StrayEntity) EntityType.STRAY.create(world, null, new TranslatableText("boss.plgate.stray_boss"), (PlayerEntity) this.getOwner(), blockPos, SpawnReason.MOB_SUMMONED, false, false);
+            StrayEntity strayBoss = (StrayEntity) EntityType.STRAY.create((ServerWorld) world, null, new TranslatableText("boss.plgate.stray_boss"), (PlayerEntity) this.getOwner(), blockPos, SpawnReason.MOB_SUMMONED, false, false);
             strayBoss.setAbsorptionAmount(160);
             strayBoss.setLeftHanded(true);
             strayBoss.addStatusEffect(new StatusEffectInstance(StatusEffects.GLOWING, 10));

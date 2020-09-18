@@ -14,7 +14,7 @@ public class PLGateItems {
     private static final Item BALL_OF_FLESH = new BallOfFleshItem(new Item.Settings().group(PLGate.PLGATE_GROUP).maxCount(16));
     public static final Item HEAVY_SNOWBALL = new HeavySnowballItem(new Item.Settings().group(PLGate.PLGATE_GROUP).maxCount(16));
     private static final Item SPIDER_SOUP = new SpiderSoupItem(new Item.Settings().group(PLGate.PLGATE_GROUP).maxCount(1).food(new FoodComponent.Builder().hunger(8).saturationModifier(6f).alwaysEdible().statusEffect(new StatusEffectInstance(StatusEffects.HUNGER, 12000), 1f).build()));
-    public static final Item GOLDEN_DOLL = new GoldenDollItem(new Item.Settings().group(PLGate.PLGATE_GROUP).maxCount(1).rarity(Rarity.UNCOMMON));
+    public static final Item GOLDEN_DOLL = new GoldenDollItem(new Item.Settings().group(PLGate.PLGATE_GROUP).maxCount(1).fireproof().rarity(Rarity.UNCOMMON));
     private static final Item STRUCTURE_LOCATOR = new StructureLocatorItem(new Item.Settings().group(PLGate.PLGATE_GROUP).maxCount(1));
 
     public static void init(){

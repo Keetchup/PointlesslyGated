@@ -36,6 +36,7 @@ public abstract class MixinItemEntity extends Entity {
             if (this.getStack().getItem() == PLGateItems.GOLDEN_DOLL) {
                 if ((this.isSubmergedIn(FluidTags.LAVA)) && (this.getThrower() != null)) {
                     GoldenDollItem.spawnPiglinBoss(this.world, this.getBlockPos(), this);
+                    this.remove();
                 }
             }
         }

@@ -2,12 +2,15 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "i i",
-    " i ",
+    " j ",
 	" i "
   ],
   "key": {
     "i": {
       "item": "minecraft:gold_ingot"
+    },
+    "j": {
+      "item": "minecraft:gold_block"
     }
   },
   "result": {
